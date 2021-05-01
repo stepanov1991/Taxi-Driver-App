@@ -56,15 +56,39 @@
 		CE2749FF263D3F8F0029F91C /* Taxi Driver App */ = {
 			isa = PBXGroup;
 			children = (
+				CE274A18263D42610029F91C /* Controller */,
+				CE274A17263D42550029F91C /* View */,
+				CE274A16263D42430029F91C /*  Model  */,
 				CE274A00263D3F8F0029F91C /* AppDelegate.swift */,
 				CE274A02263D3F8F0029F91C /* SceneDelegate.swift */,
-				CE274A04263D3F8F0029F91C /* ViewController.swift */,
-				CE274A06263D3F8F0029F91C /* Main.storyboard */,
 				CE274A09263D3F900029F91C /* Assets.xcassets */,
 				CE274A0B263D3F900029F91C /* LaunchScreen.storyboard */,
 				CE274A0E263D3F900029F91C /* Info.plist */,
 			);
 			path = "Taxi Driver App";
+			sourceTree = "<group>";
+		};
+		CE274A16263D42430029F91C /*  Model  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = " Model ";
+			sourceTree = "<group>";
+		};
+		CE274A17263D42550029F91C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE274A06263D3F8F0029F91C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE274A18263D42610029F91C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE274A04263D3F8F0029F91C /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Taxi Driver App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Taxi Driver App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
