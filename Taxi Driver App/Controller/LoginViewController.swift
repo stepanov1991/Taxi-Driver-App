@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             checkBox.setImage(UIImage(named: "checked"), for: .selected)
         }
     }
+    var rememberCheckBox = false
     
     
     override func viewDidLoad() {
@@ -28,6 +29,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
         self.loginTextField.delegate = self
         
+        rememberCheckBox = UserDefaults.standard.bool(forKey: "REMEMBER_USER")
+        checkBox.isSelected = rememberCheckBox
+        if rememberCheckBox {
+            let password = UserDefaults.standard.string(forKey: "USER_PASSWORD")
+            passwordTextField.text = password
+            let login  = UserDefaults.standard.string(forKey: "USER_LOGIN")
+            loginTextField.text = login
+            
+          
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -36,8 +47,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
     }
     @IBAction func checkBoxPressed(_ sender: UIButton) {
+        rememberCheckBox = !rememberCheckBox
+        UserDefaults.standard.set(rememberCheckBox, forKey: "REMEMBER_USER")
         sender.checkBoxAnimation {
             print("I'm done")
+            if self.rememberCheckBox {
+                let pass = self.passwordTextField.text
+                UserDefaults.standard.set(pass, forKey: "USER_PASSWORD")
+                let log = self.loginTextField.text
+                UserDefaults.standard.set(log, forKey: "USER_LOGIN")
+                                
+            }
+            
+            else {
+                UserDefaults.standard.removeObject(forKey: "USER_PASSWORD")
+                UserDefaults.standard.removeObject(forKey: "USER_LOGIN")
+            }
             //here you can also track the Checked, UnChecked state with sender.isSelected
             print(sender.isSelected)
         }
@@ -52,6 +77,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginTextField.resignFirstResponder()
         return true
         
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let pass = passwordTextField.text
+        UserDefaults.standard.set(pass, forKey: "USER_PASSWORD")
+        let log = loginTextField.text
+        UserDefaults.standard.set(log, forKey: "USER_LOGIN")
     }
 }
 extension UIButton {
