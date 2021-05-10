@@ -221,6 +221,7 @@
                         <outlet property="checkBox" destination="MaC-5e-G0U" id="ith-P8-loq"/>
                         <outlet property="loginTextField" destination="gZp-pA-Vpw" id="7rh-cQ-7bR"/>
                         <outlet property="passwordTextField" destination="3NO-If-DGj" id="FET-Bu-4aL"/>
+                        <outlet property="showPasswordButton" destination="fLt-Sh-hOy" id="VmY-wR-bDU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnE-c3-wcY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

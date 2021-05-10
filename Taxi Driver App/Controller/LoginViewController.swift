@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
@@ -19,6 +20,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             checkBox.setImage(UIImage(named: "checked"), for: .selected)
         }
     }
+    @IBOutlet weak var showPasswordButton: UIButton!{
+        didSet{
+            showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        }
+    }
+    
     var rememberCheckBox = false
     
     
@@ -37,34 +45,39 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let login  = UserDefaults.standard.string(forKey: "USER_LOGIN")
             loginTextField.text = login
             
-          
+            
         }
         
-        // Do any additional setup after loading the view.
+  
     }
     
-    @IBAction func showPasswordButtonPressed(_ sender: Any) {
+
+    @IBAction func showPasswordButtonPressed(_ sender: UIButton) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        
+        sender.changeButtonImageAnimation {
+            
+        }
+
     }
     @IBAction func checkBoxPressed(_ sender: UIButton) {
         rememberCheckBox = !rememberCheckBox
         UserDefaults.standard.set(rememberCheckBox, forKey: "REMEMBER_USER")
-        sender.checkBoxAnimation {
-            print("I'm done")
+        sender.changeButtonImageAnimation {
+        
             if self.rememberCheckBox {
                 let pass = self.passwordTextField.text
                 UserDefaults.standard.set(pass, forKey: "USER_PASSWORD")
                 let log = self.loginTextField.text
                 UserDefaults.standard.set(log, forKey: "USER_LOGIN")
-                                
+                
             }
             
             else {
                 UserDefaults.standard.removeObject(forKey: "USER_PASSWORD")
                 UserDefaults.standard.removeObject(forKey: "USER_LOGIN")
             }
-            //here you can also track the Checked, UnChecked state with sender.isSelected
-            print(sender.isSelected)
+       
         }
     }
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -85,8 +98,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(log, forKey: "USER_LOGIN")
     }
 }
+
+//MARK: - Button to ChackBox extension
 extension UIButton {
-    func checkBoxAnimation(closure: @escaping () -> Void)  {
+    func changeButtonImageAnimation(closure: @escaping () -> Void)  {
         guard let image = self.imageView else {return}
         
         UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear) {
