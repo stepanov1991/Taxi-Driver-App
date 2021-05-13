@@ -12,12 +12,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var bachgroundView: UIView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var checkBox: UIButton!{
         didSet{
-            checkBox.setImage(UIImage(named: "unchecked"), for: .normal)
-            checkBox.setImage(UIImage(named: "checked"), for: .selected)
+            checkBox.setImage(UIImage(systemName: "square.fill"), for: .normal)
+            checkBox.setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
         }
     }
     @IBOutlet weak var showPasswordButton: UIButton!{
@@ -48,6 +50,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
         
+        loginButton.layer.cornerRadius = 10
+        bachgroundView.layer.cornerRadius = 20
   
     }
     

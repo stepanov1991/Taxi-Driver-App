@@ -14,15 +14,19 @@ class LoginScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loginButton.layer.cornerRadius = 10
         registerButton.layer.borderWidth = 1.0
         registerButton.layer.borderColor = UIColor.black.cgColor
         registerButton.layer.cornerRadius = 10
         
+        self.title = ""
        
         
         // Do any additional setup after loading the view.
     }
+    
+  
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
     }
