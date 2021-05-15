@@ -142,9 +142,7 @@ extension Registraiton1ViewController: UIImagePickerControllerDelegate, UINaviga
         if let editingImage = data[convertInfoKey((UIImagePickerController.InfoKey.editedImage))] as? UIImage {
             self.profilFotoImage.image = editingImage
         }
-        
-
-        self.dismiss(animated: true, completion: nil)
+       self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
