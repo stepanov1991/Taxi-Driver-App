@@ -8,6 +8,7 @@
 import UIKit
 import MobileCoreServices
 import DropDown
+import AVFoundation
 
 class Registraiton1ViewController: UIViewController {
     
@@ -58,6 +59,7 @@ class Registraiton1ViewController: UIViewController {
         cityDropDown.topOffset = CGPoint(x: 0, y:-(cityDropDown.anchorView?.plainView.bounds.height)!)
         cityDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.cityTitleDropDown.text = cityList[index]
+          
             
         }
         
@@ -83,9 +85,13 @@ class Registraiton1ViewController: UIViewController {
         let alert = UIAlertController(title: "Chose photo", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Open camera", style: .default, handler: { (handler) in
             self.openCamera()
+          
+          
         }))
         alert.addAction(UIAlertAction(title: "Chose from gallery", style: .default, handler: { (handler) in
             self.openGallery()
+            
+            
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in
             
@@ -96,9 +102,11 @@ class Registraiton1ViewController: UIViewController {
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             let image = UIImagePickerController()
             image.allowsEditing = true
+            image.delegate = self
             image.sourceType = .camera
             image.mediaTypes = [kUTTypeImage as String]
             self.present(image, animated: true, completion: nil)
+           
         }
     }
     
@@ -108,6 +116,7 @@ class Registraiton1ViewController: UIViewController {
             image.allowsEditing = true
             image.delegate = self
             self.present(image, animated: true, completion: nil)
+            
         }
     }
     
@@ -119,8 +128,10 @@ class Registraiton1ViewController: UIViewController {
     @IBAction func serviceDropDownButtonPressed(_ sender: UIButton) {
         serviceDropDown.show()
     }
-    @IBAction func choseImageButtonPressed(_ sender: Any) {
+    @IBAction func choseImageButtonPressed(_ sender: UIButton) {
         actionSheet()
+       
+      
     }
     
 
