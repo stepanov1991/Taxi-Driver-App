@@ -23,6 +23,7 @@ class Registraiton1ViewController: UIViewController {
     
     @IBOutlet weak var profilFotoImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var choseImageButton: UIButton!
     
     var cityList = ["Київ", "Хмельницький", "Одеса", "Львів", "Харків"]
     var serviceList = ["549","6565","2299","700900"]
@@ -43,6 +44,7 @@ class Registraiton1ViewController: UIViewController {
         profilFotoImage.layer.masksToBounds = false
         profilFotoImage.layer.cornerRadius = profilFotoImage.frame.height/2
         profilFotoImage.clipsToBounds = true
+        choseImageButton.layer.cornerRadius = choseImageButton.frame.height/2
         
         nextButton.layer.cornerRadius = 10
     }
@@ -80,6 +82,7 @@ class Registraiton1ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.title = ""
     }
+//MARK: - Add pfoto funktions
     
     func actionSheet() {
         let alert = UIAlertController(title: "Chose photo", message: nil, preferredStyle: .actionSheet)
@@ -120,8 +123,8 @@ class Registraiton1ViewController: UIViewController {
         }
     }
     
-    
-    
+    //MARK: - Actions
+     
     @IBAction func cityDropDownButtonPressed(_ sender: UIButton) {
         cityDropDown.show()
     }
@@ -135,16 +138,8 @@ class Registraiton1ViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 }
 extension Registraiton1ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

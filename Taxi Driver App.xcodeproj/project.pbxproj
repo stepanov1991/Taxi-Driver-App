@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		89088EE24220A44F51E3C344 /* Pods_Taxi_Driver_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */; };
+		CE162744265D22800080FB94 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE162742265D22800080FB94 /* PhotoCell.swift */; };
+		CE162745265D22800080FB94 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE162743265D22800080FB94 /* PhotoCell.xib */; };
+		CE162747265F89690080FB94 /* Registration3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE162746265F89690080FB94 /* Registration3ViewController.swift */; };
 		CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A00263D3F8F0029F91C /* AppDelegate.swift */; };
 		CE274A03263D3F8F0029F91C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A02263D3F8F0029F91C /* SceneDelegate.swift */; };
 		CE274A05263D3F8F0029F91C /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A04263D3F8F0029F91C /* LoginScreenViewController.swift */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		2C02D052518B0A3E445175D0 /* Pods-Taxi Driver App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taxi Driver App.release.xcconfig"; path = "Target Support Files/Pods-Taxi Driver App/Pods-Taxi Driver App.release.xcconfig"; sourceTree = "<group>"; };
 		79927F27ED183331385B1144 /* Pods-Taxi Driver App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taxi Driver App.debug.xcconfig"; path = "Target Support Files/Pods-Taxi Driver App/Pods-Taxi Driver App.debug.xcconfig"; sourceTree = "<group>"; };
+		CE162742265D22800080FB94 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		CE162743265D22800080FB94 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		CE162746265F89690080FB94 /* Registration3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3ViewController.swift; sourceTree = "<group>"; };
 		CE2749FD263D3F8F0029F91C /* Taxi Driver App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taxi Driver App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE274A00263D3F8F0029F91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE274A02263D3F8F0029F91C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				CE274A06263D3F8F0029F91C /* Main.storyboard */,
+				CE162742265D22800080FB94 /* PhotoCell.swift */,
+				CE162743265D22800080FB94 /* PhotoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 				CE274A1C263D4D4C0029F91C /* LoginViewController.swift */,
 				CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */,
 				CECB430B2646CE98004AE69D /* Registration2ViewController.swift */,
+				CE162746265F89690080FB94 /* Registration3ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE162745265D22800080FB94 /* PhotoCell.xib in Resources */,
 				CE274A0D263D3F900029F91C /* LaunchScreen.storyboard in Resources */,
 				CE274A0A263D3F900029F91C /* Assets.xcassets in Resources */,
 				CE274A08263D3F8F0029F91C /* Main.storyboard in Resources */,
@@ -239,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE274A1D263D4D4C0029F91C /* LoginViewController.swift in Sources */,
+				CE162744265D22800080FB94 /* PhotoCell.swift in Sources */,
 				CE274A05263D3F8F0029F91C /* LoginScreenViewController.swift in Sources */,
+				CE162747265F89690080FB94 /* Registration3ViewController.swift in Sources */,
 				CECB430A264690E5004AE69D /* Registraiton1ViewController.swift in Sources */,
 				CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */,
 				CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */,
