@@ -28,8 +28,9 @@ class Registraiton1ViewController: UIViewController {
     var cityList = ["Київ", "Хмельницький", "Одеса", "Львів", "Харків"]
     var serviceList = ["549","6565","2299","700900"]
     
-    let cityDropDown = DropDown()
-    let serviceDropDown = DropDown()
+    let cityDropDown = DropDownManager()
+    let serviceDropDownManager = DropDownManager()
+    
   
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,37 +49,27 @@ class Registraiton1ViewController: UIViewController {
         choseImageButton.layer.cornerRadius = choseImageButton.frame.height/2
         
         nextButton.layer.cornerRadius = 10
+        
+        
+     
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+
+       
         cityTitleDropDown.text = "Виберіть місто"
-        cityDropDown.anchorView = cityViewDropDown
-        cityDropDown.dataSource = cityList
-        cityDropDown.bottomOffset = CGPoint(x: 0, y:(cityDropDown.anchorView?.plainView.bounds.height)!)
-        cityDropDown.topOffset = CGPoint(x: 0, y:-(cityDropDown.anchorView?.plainView.bounds.height)!)
-        cityDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.cityTitleDropDown.text = cityList[index]
-       }
-        
+        cityDropDown.addDropDown(textDropDown: cityTitleDropDown, viewDropDown: cityViewDropDown, listDropDown: cityList)
+       
         serviceTitleDropDown.text = "Виберіть службу"
-        serviceDropDown.anchorView = serviceViewDropDown
-        serviceDropDown.dataSource = serviceList
-        serviceDropDown.bottomOffset = CGPoint(x: 0, y:(serviceDropDown.anchorView?.plainView.bounds.height)!)
-        serviceDropDown.topOffset = CGPoint(x: 0, y:-(serviceDropDown.anchorView?.plainView.bounds.height)!)
-        serviceDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.serviceTitleDropDown.text = serviceList[index]
-        }
-        
-     
-     
+        serviceDropDownManager.addDropDown(textDropDown: serviceTitleDropDown, viewDropDown: serviceViewDropDown, listDropDown: serviceList)
+
         // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.title = ""
+       
     }
 //MARK: - Add pfoto funktions
     
@@ -124,10 +115,11 @@ class Registraiton1ViewController: UIViewController {
     //MARK: - Actions
      
     @IBAction func cityDropDownButtonPressed(_ sender: UIButton) {
-        cityDropDown.show()
+       
+        cityDropDown.dropDown.show()
     }
     @IBAction func serviceDropDownButtonPressed(_ sender: UIButton) {
-        serviceDropDown.show()
+        serviceDropDownManager.dropDown.show()
     }
     @IBAction func choseImageButtonPressed(_ sender: UIButton) {
         actionSheet()

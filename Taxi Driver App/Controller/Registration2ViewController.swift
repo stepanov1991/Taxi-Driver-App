@@ -10,6 +10,8 @@ import MobileCoreServices
 
 class Registration2ViewController: PhotoViewController {
     
+    @IBOutlet weak var brandCarTitleDropDown: UILabel!
+    @IBOutlet weak var brandCarViewDropDown: UIView!
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -19,6 +21,8 @@ class Registration2ViewController: PhotoViewController {
     
     let titleArray = ["Спереду", "Ззаду" ,"Збоку" ,"В салоні"]
     
+    let brandCarDropDown = DropDownManager()
+    let brandCarList = ["Lanos", "BMW", "Skoda", "Lada", "Volkswagen", "Mercedes-Benz"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +38,21 @@ class Registration2ViewController: PhotoViewController {
         nextButton.layer.cornerRadius = 10
         
         navigationItem.backButtonTitle = ""
-       
+    
+        carPhotoTableView.rowHeight = self.view.frame.size.height / 6
+        brandCarTitleDropDown.text = "Виберіть марку автомобіля"
+        brandCarDropDown.addDropDown(textDropDown: brandCarTitleDropDown, viewDropDown: brandCarViewDropDown, listDropDown: brandCarList)
         // Do any additional setup after loading the view.
     }
+    
+
+    @IBAction func brandButtonDropDownPressed(_ sender: UIButton) {
+        brandCarDropDown.dropDown.show()
+    }
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func actionSheet() {
         let alert = UIAlertController(title: "Chose photo", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Open camera", style: .default, handler: { (handler) in

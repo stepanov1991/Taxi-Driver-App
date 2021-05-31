@@ -23,6 +23,7 @@
 		CE274A1D263D4D4C0029F91C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A1C263D4D4C0029F91C /* LoginViewController.swift */; };
 		CECB430A264690E5004AE69D /* Registraiton1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */; };
 		CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB430B2646CE98004AE69D /* Registration2ViewController.swift */; };
+		CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		CE274A1C263D4D4C0029F91C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registraiton1ViewController.swift; sourceTree = "<group>"; };
 		CECB430B2646CE98004AE69D /* Registration2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2ViewController.swift; sourceTree = "<group>"; };
+		CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownManager.swift; sourceTree = "<group>"; };
 		DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taxi_Driver_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				CE16274826623FB60080FB94 /* AddPhotoModel.swift */,
 				CE16274A26624DF40080FB94 /* AddPhotoViewController.swift */,
 				CE16274C26624E640080FB94 /* PhotoViewController.swift */,
+				CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */,
 			);
 			path = " Model ";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */,
 				CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */,
 				CE16274B26624DF40080FB94 /* AddPhotoViewController.swift in Sources */,
+				CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */,
 				CE16274926623FB60080FB94 /* AddPhotoModel.swift in Sources */,
 				CE274A03263D3F8F0029F91C /* SceneDelegate.swift in Sources */,
 				CE16274D26624E640080FB94 /* PhotoViewController.swift in Sources */,
