@@ -19,10 +19,14 @@ class Registration3ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Документи"
+        
+     
+        
         documentsFotoTableView.dataSource = self
         documentsFotoTableView.delegate = self
 
-        documentsFotoTableView.register(UINib(nibName: "PhotoCell", bundle: nil), forCellReuseIdentifier: "PhotoCell")
+        documentsFotoTableView.register(UINib(nibName: "photoCell", bundle: nil), forCellReuseIdentifier: "PhotoCell")
         
         backButton.layer.cornerRadius = 10
         backButton.layer.borderWidth = 1.0

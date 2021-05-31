@@ -30,7 +30,7 @@ class Registraiton1ViewController: UIViewController {
     
     let cityDropDown = DropDown()
     let serviceDropDown = DropDown()
-    
+  
     
     override func viewWillAppear(_ animated: Bool) {
        
@@ -38,6 +38,7 @@ class Registraiton1ViewController: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = backBarButton
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backBarButton
         self.title = "Реєстрація"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.cyan]
 
         
         // make circle image
@@ -61,9 +62,7 @@ class Registraiton1ViewController: UIViewController {
         cityDropDown.topOffset = CGPoint(x: 0, y:-(cityDropDown.anchorView?.plainView.bounds.height)!)
         cityDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.cityTitleDropDown.text = cityList[index]
-          
-            
-        }
+       }
         
         serviceTitleDropDown.text = "Виберіть службу"
         serviceDropDown.anchorView = serviceViewDropDown
@@ -72,7 +71,6 @@ class Registraiton1ViewController: UIViewController {
         serviceDropDown.topOffset = CGPoint(x: 0, y:-(serviceDropDown.anchorView?.plainView.bounds.height)!)
         serviceDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.serviceTitleDropDown.text = serviceList[index]
-            
         }
         
      
