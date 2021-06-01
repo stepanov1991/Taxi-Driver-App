@@ -10,11 +10,12 @@ import MobileCoreServices
 import DropDown
 import AVFoundation
 
+@available(iOS 13.0, *)
 class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     
-
     
-
+    
+    
     @IBOutlet weak var cityTitleDropDown: UILabel!
     @IBOutlet weak var cityViewDropDown: UIView!
     
@@ -36,16 +37,16 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     let cityDropDown = DropDownManager()
     let serviceDropDownManager = DropDownManager()
     
-  
+    static var service = ""
     
     override func viewWillAppear(_ animated: Bool) {
-       
-     let backBarButton = UIImage(named: "back")
+        
+        let backBarButton = UIImage(named: "back")
         self.navigationController?.navigationBar.backIndicatorImage = backBarButton
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backBarButton
         self.title = "Реєстрація"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.cyan]
-
+        
         
         // make circle image
         profilFotoImage.layer.masksToBounds = false
@@ -56,9 +57,9 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
         nextButton.layer.cornerRadius = 10
         
         
-     
+        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,20 +67,26 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
         self.fullNameTextField.delegate = self
         self.telophoneTextField.delegate = self
         self.emailTextField.delegate = self
-
-       
+        
+        
         cityTitleDropDown.text = "Виберіть місто"
         cityDropDown.addDropDown(textDropDown: cityTitleDropDown, viewDropDown: cityViewDropDown, listDropDown: cityList)
-       
+        
         serviceTitleDropDown.text = "Виберіть службу"
         serviceDropDownManager.addDropDown(textDropDown: serviceTitleDropDown, viewDropDown: serviceViewDropDown, listDropDown: serviceList)
-
+        
         // Do any additional setup after loading the view.
     }
+  
     override func viewWillDisappear(_ animated: Bool) {
         self.title = ""
-       
+        guard let service = serviceTitleDropDown.text else {
+          return
+        }
+        Singelton.shared.service = service
     }
+    
+   
     //MARK: - TableView Delegate Methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -92,8 +99,8 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
     }
- 
-//MARK: - Add pfoto functions
+    
+    //MARK: - Add pfoto functions
     
     func actionSheet() {
         let alert = UIAlertController(title: "Chose photo", message: nil, preferredStyle: .actionSheet)
@@ -115,7 +122,7 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
             image.sourceType = .camera
             image.mediaTypes = [kUTTypeImage as String]
             self.present(image, animated: true, completion: nil)
-           
+            
         }
     }
     
@@ -130,24 +137,26 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - Actions
-     
+    
     @IBAction func cityDropDownButtonPressed(_ sender: UIButton) {
-       
         cityDropDown.dropDown.show()
     }
     @IBAction func serviceDropDownButtonPressed(_ sender: UIButton) {
         serviceDropDownManager.dropDown.show()
+       
+        
     }
     @IBAction func choseImageButtonPressed(_ sender: UIButton) {
         actionSheet()
-       
-      
+        
+        
     }
     
-
-
-//MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+    
+    
+    //MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 }
+@available(iOS 13.0, *)
 extension Registraiton1ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -155,7 +164,7 @@ extension Registraiton1ViewController: UIImagePickerControllerDelegate, UINaviga
         if let editingImage = data[convertInfoKey((UIImagePickerController.InfoKey.editedImage))] as? UIImage {
             self.profilFotoImage.image = editingImage
         }
-       self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

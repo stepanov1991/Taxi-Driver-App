@@ -237,6 +237,9 @@
                                                 <state key="normal" title="Забули пароль?">
                                                     <color key="titleColor" red="0.01176470588" green="0.74901960779999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="tBI-M4-aXB" kind="show" id="KER-pP-fcn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -852,7 +855,7 @@
         <!--Registration3 View Controller-->
         <scene sceneID="VVs-VL-aeI">
             <objects>
-                <viewController id="IDw-QL-Iaj" customClass="Registration3ViewController" customModule="Taxi_Driver_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Registration3ViewController" id="IDw-QL-Iaj" customClass="Registration3ViewController" customModule="Taxi_Driver_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c9h-FD-45r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -904,6 +907,9 @@
                                         <state key="normal" title="Відправити">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="IDw-QL-Iaj" eventType="touchUpInside" id="Acv-Ek-bdb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1000,6 +1006,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSH-v5-EtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3199" y="558"/>
+        </scene>
+        <!--Reset Passvord View Controller-->
+        <scene sceneID="Aig-zk-LiH">
+            <objects>
+                <viewController id="tBI-M4-aXB" customClass="ResetPassvordViewController" customModule="Taxi_Driver_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hI6-o5-7Vx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BoG-Tl-6zk">
+                                <rect key="frame" x="16" y="112" width="382" height="64.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHf-RU-5k1">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdt-6u-oyN">
+                                        <rect key="frame" x="0.0" y="30.5" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bdt-6u-oyN" secondAttribute="trailing" id="3JT-7m-de3"/>
+                                    <constraint firstAttribute="bottom" secondItem="bdt-6u-oyN" secondAttribute="bottom" id="gtO-wz-xXq"/>
+                                    <constraint firstItem="bdt-6u-oyN" firstAttribute="leading" secondItem="BoG-Tl-6zk" secondAttribute="leading" id="uu1-PU-Wd1"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwM-8u-h4a">
+                                <rect key="frame" x="16" y="830" width="382" height="48"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.74901960779999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="abA-Fe-HjH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Відновити пароль">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="8pj-Am-cgP" eventType="touchUpInside" id="BrU-Qs-XgN"/>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z2t-WB-Mur"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tcB-Vj-VWu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TwM-8u-h4a" firstAttribute="leading" secondItem="tcB-Vj-VWu" secondAttribute="leading" constant="16" id="Wr6-Ec-xxO"/>
+                            <constraint firstItem="tcB-Vj-VWu" firstAttribute="trailing" secondItem="TwM-8u-h4a" secondAttribute="trailing" constant="16" id="Xrq-7A-fjj"/>
+                            <constraint firstItem="TwM-8u-h4a" firstAttribute="bottom" secondItem="tcB-Vj-VWu" secondAttribute="bottom" constant="16" id="a5C-wu-awD"/>
+                            <constraint firstItem="BoG-Tl-6zk" firstAttribute="top" secondItem="tcB-Vj-VWu" secondAttribute="top" constant="24" id="o9k-eO-mYA"/>
+                            <constraint firstItem="tcB-Vj-VWu" firstAttribute="trailing" secondItem="BoG-Tl-6zk" secondAttribute="trailing" constant="16" id="x9M-hz-HvM"/>
+                            <constraint firstItem="BoG-Tl-6zk" firstAttribute="leading" secondItem="tcB-Vj-VWu" secondAttribute="leading" constant="16" id="yRT-6P-gPc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pW0-2M-IQR"/>
+                    <connections>
+                        <outlet property="resetPasswordButton" destination="TwM-8u-h4a" id="2CX-5D-kIz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Gm-Wr-n0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3120" y="-111"/>
         </scene>
         <!--Connection Settings View Controller-->
         <scene sceneID="abf-Vn-Hfj">
@@ -1172,6 +1243,7 @@
             <point key="canvasLocation" x="1574" y="-111"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="LoginLogo" width="342" height="201"/>
         <image name="LoginScreenImage" width="343" height="243"/>

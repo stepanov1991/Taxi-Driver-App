@@ -24,6 +24,8 @@
 		CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */; };
 		CEDFBDAD26650016004FE22C /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAC26650016004FE22C /* PhotoManager.swift */; };
 		CEDFBDAF26660E04004FE22C /* ConnectionSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */; };
+		CEDFBDB426665AAE004FE22C /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDB326665AAE004FE22C /* Singelton.swift */; };
+		CEDFBDB62666611B004FE22C /* ResetPassvordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDB52666611B004FE22C /* ResetPassvordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownManager.swift; sourceTree = "<group>"; };
 		CEDFBDAC26650016004FE22C /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettingsViewController.swift; sourceTree = "<group>"; };
+		CEDFBDB326665AAE004FE22C /* Singelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singelton.swift; sourceTree = "<group>"; };
+		CEDFBDB52666611B004FE22C /* ResetPassvordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassvordViewController.swift; sourceTree = "<group>"; };
 		DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taxi_Driver_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,7 @@
 				CE16274C26624E640080FB94 /* PhotoViewController.swift */,
 				CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */,
 				CEDFBDAC26650016004FE22C /* PhotoManager.swift */,
+				CEDFBDB326665AAE004FE22C /* Singelton.swift */,
 			);
 			path = " Model ";
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				CE274A04263D3F8F0029F91C /* LoginScreenViewController.swift */,
 				CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */,
 				CE274A1C263D4D4C0029F91C /* LoginViewController.swift */,
+				CEDFBDB52666611B004FE22C /* ResetPassvordViewController.swift */,
 				CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */,
 				CECB430B2646CE98004AE69D /* Registration2ViewController.swift */,
 				CE162746265F89690080FB94 /* Registration3ViewController.swift */,
@@ -263,10 +269,12 @@
 				CE274A1D263D4D4C0029F91C /* LoginViewController.swift in Sources */,
 				CE162744265D22800080FB94 /* photoCell.swift in Sources */,
 				CE274A05263D3F8F0029F91C /* LoginScreenViewController.swift in Sources */,
+				CEDFBDB426665AAE004FE22C /* Singelton.swift in Sources */,
 				CE162747265F89690080FB94 /* Registration3ViewController.swift in Sources */,
 				CECB430A264690E5004AE69D /* Registraiton1ViewController.swift in Sources */,
 				CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */,
 				CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */,
+				CEDFBDB62666611B004FE22C /* ResetPassvordViewController.swift in Sources */,
 				CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */,
 				CEDFBDAD26650016004FE22C /* PhotoManager.swift in Sources */,
 				CE274A03263D3F8F0029F91C /* SceneDelegate.swift in Sources */,

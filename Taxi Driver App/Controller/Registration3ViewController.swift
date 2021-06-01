@@ -17,6 +17,7 @@ class Registration3ViewController: PhotoViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     let documentArray = ["Сторона 1","Сторона 2"]
+    var service = ""
     //   let photoManager = PhotoManager()
   
     
@@ -50,6 +51,13 @@ class Registration3ViewController: PhotoViewController {
         actionSheet()
       
      
+    }
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Реєстрація успішна", message: "Очікуйте на дзвінок від адмістрітора служби \(Singelton.shared.service)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Закрити", style: .cancel, handler: { (handler) in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - Add pfoto functions

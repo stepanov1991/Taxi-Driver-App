@@ -41,6 +41,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.backButtonTitle = ""
+        
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         self.passwordTextField.delegate = self
