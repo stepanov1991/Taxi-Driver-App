@@ -11,8 +11,6 @@
 		CE162744265D22800080FB94 /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE162742265D22800080FB94 /* photoCell.swift */; };
 		CE162745265D22800080FB94 /* photoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE162743265D22800080FB94 /* photoCell.xib */; };
 		CE162747265F89690080FB94 /* Registration3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE162746265F89690080FB94 /* Registration3ViewController.swift */; };
-		CE16274926623FB60080FB94 /* AddPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16274826623FB60080FB94 /* AddPhotoModel.swift */; };
-		CE16274B26624DF40080FB94 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16274A26624DF40080FB94 /* AddPhotoViewController.swift */; };
 		CE16274D26624E640080FB94 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16274C26624E640080FB94 /* PhotoViewController.swift */; };
 		CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A00263D3F8F0029F91C /* AppDelegate.swift */; };
 		CE274A03263D3F8F0029F91C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A02263D3F8F0029F91C /* SceneDelegate.swift */; };
@@ -24,6 +22,8 @@
 		CECB430A264690E5004AE69D /* Registraiton1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */; };
 		CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB430B2646CE98004AE69D /* Registration2ViewController.swift */; };
 		CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */; };
+		CEDFBDAD26650016004FE22C /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAC26650016004FE22C /* PhotoManager.swift */; };
+		CEDFBDAF26660E04004FE22C /* ConnectionSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,6 @@
 		CE162742265D22800080FB94 /* photoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
 		CE162743265D22800080FB94 /* photoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = photoCell.xib; sourceTree = "<group>"; };
 		CE162746265F89690080FB94 /* Registration3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3ViewController.swift; sourceTree = "<group>"; };
-		CE16274826623FB60080FB94 /* AddPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoModel.swift; sourceTree = "<group>"; };
-		CE16274A26624DF40080FB94 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		CE16274C26624E640080FB94 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CE2749FD263D3F8F0029F91C /* Taxi Driver App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taxi Driver App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE274A00263D3F8F0029F91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +45,8 @@
 		CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registraiton1ViewController.swift; sourceTree = "<group>"; };
 		CECB430B2646CE98004AE69D /* Registration2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2ViewController.swift; sourceTree = "<group>"; };
 		CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownManager.swift; sourceTree = "<group>"; };
+		CEDFBDAC26650016004FE22C /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettingsViewController.swift; sourceTree = "<group>"; };
 		DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taxi_Driver_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,10 +115,9 @@
 		CE274A16263D42430029F91C /*  Model  */ = {
 			isa = PBXGroup;
 			children = (
-				CE16274826623FB60080FB94 /* AddPhotoModel.swift */,
-				CE16274A26624DF40080FB94 /* AddPhotoViewController.swift */,
 				CE16274C26624E640080FB94 /* PhotoViewController.swift */,
 				CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */,
+				CEDFBDAC26650016004FE22C /* PhotoManager.swift */,
 			);
 			path = " Model ";
 			sourceTree = "<group>";
@@ -137,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				CE274A04263D3F8F0029F91C /* LoginScreenViewController.swift */,
+				CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */,
 				CE274A1C263D4D4C0029F91C /* LoginViewController.swift */,
 				CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */,
 				CECB430B2646CE98004AE69D /* Registration2ViewController.swift */,
@@ -267,11 +267,11 @@
 				CECB430A264690E5004AE69D /* Registraiton1ViewController.swift in Sources */,
 				CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */,
 				CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */,
-				CE16274B26624DF40080FB94 /* AddPhotoViewController.swift in Sources */,
 				CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */,
-				CE16274926623FB60080FB94 /* AddPhotoModel.swift in Sources */,
+				CEDFBDAD26650016004FE22C /* PhotoManager.swift in Sources */,
 				CE274A03263D3F8F0029F91C /* SceneDelegate.swift in Sources */,
 				CE16274D26624E640080FB94 /* PhotoViewController.swift in Sources */,
+				CEDFBDAF26660E04004FE22C /* ConnectionSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

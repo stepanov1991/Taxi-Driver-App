@@ -10,7 +10,7 @@ import MobileCoreServices
 import DropDown
 import AVFoundation
 
-class Registraiton1ViewController: UIViewController {
+class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     
 
     
@@ -25,8 +25,13 @@ class Registraiton1ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var choseImageButton: UIButton!
     
-    var cityList = ["Київ", "Хмельницький", "Одеса", "Львів", "Харків"]
-    var serviceList = ["549","6565","2299","700900"]
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var telophoneTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    
+    let cityList = ["Київ", "Хмельницький", "Одеса", "Львів", "Харків"]
+    let serviceList = ["549","6565","2299","700900"]
     
     let cityDropDown = DropDownManager()
     let serviceDropDownManager = DropDownManager()
@@ -57,6 +62,10 @@ class Registraiton1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.fullNameTextField.delegate = self
+        self.telophoneTextField.delegate = self
+        self.emailTextField.delegate = self
 
        
         cityTitleDropDown.text = "Виберіть місто"
@@ -71,22 +80,30 @@ class Registraiton1ViewController: UIViewController {
         self.title = ""
        
     }
-//MARK: - Add pfoto funktions
+    //MARK: - TableView Delegate Methods
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fullNameTextField.resignFirstResponder()
+        telophoneTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+ 
+//MARK: - Add pfoto functions
     
     func actionSheet() {
         let alert = UIAlertController(title: "Chose photo", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Open camera", style: .default, handler: { (handler) in
             self.openCamera()
-          
-          
         }))
         alert.addAction(UIAlertAction(title: "Chose from gallery", style: .default, handler: { (handler) in
             self.openGallery()
-            
-            
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in
-            
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -153,3 +170,4 @@ extension Registraiton1ViewController: UIImagePickerControllerDelegate, UINaviga
         return input.rawValue
     }
 }
+

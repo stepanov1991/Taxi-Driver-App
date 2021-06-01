@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var connectionSetiingButton: UIButton!
     @IBOutlet weak var bachgroundView: UIView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,8 +29,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .selected)
         }
     }
+    @IBOutlet weak var serviceViewDropDown: UIView!
+    @IBOutlet weak var serviceTitleDropDown: UILabel!
+    
+    
     
     var rememberCheckBox = false
+    let serviceDropDown = DropDownManager()
+    let serviceList = ["549","6565","2299","700900"]
     
     
     override func viewDidLoad() {
@@ -46,16 +53,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.text = password
             let login  = UserDefaults.standard.string(forKey: "USER_LOGIN")
             loginTextField.text = login
-            
-            
         }
+        
+        serviceTitleDropDown.text = "Виберіть службу"
         
         loginButton.layer.cornerRadius = 10
         bachgroundView.layer.cornerRadius = 20
+        
+        connectionSetiingButton.layer.borderWidth = 1.0
+        connectionSetiingButton.layer.borderColor = UIColor.black.cgColor
+        connectionSetiingButton.layer.cornerRadius = 10
+        
+        serviceDropDown.addDropDown(textDropDown: serviceTitleDropDown, viewDropDown: serviceViewDropDown, listDropDown: serviceList)
   
     }
     
 
+    @IBAction func serviceDropDownPressed(_ sender: UIButton) {
+        serviceDropDown.dropDown.show()
+    }
     @IBAction func showPasswordButtonPressed(_ sender: UIButton) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
@@ -86,6 +102,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func backButtonPressed(_ sender: UIButton) {
         _ = self.navigationController?.popToRootViewController(animated: true)
+    }
+    @IBAction func connectionsSettingButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
     }
     
     //MARK: - TextField Delegate

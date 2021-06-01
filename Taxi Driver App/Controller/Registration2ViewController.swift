@@ -108,6 +108,7 @@ extension Registration2ViewController: UITableViewDelegate, UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         actionSheet()
+        
       
     }
     

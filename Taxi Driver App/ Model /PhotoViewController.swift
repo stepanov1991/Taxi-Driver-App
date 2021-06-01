@@ -9,8 +9,7 @@ import UIKit
 
 class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var image = [UIImage]()
-    //UIImage()
+    var image = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +17,19 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
         // Do any additional setup after loading the view.
     }
+    func getImage() -> UIImage {
+        return image
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let data = convertFromUIImagetoDict(info)
         if let editingImage = data[convertInfoKey((UIImagePickerController.InfoKey.editedImage))] as? UIImage {
-            self.image.append(editingImage)
+            self.image = editingImage
             //self.profilFotoImage.image = editingImage
         }
        self.dismiss(animated: true, completion: nil)
+        
     }
     
      func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
