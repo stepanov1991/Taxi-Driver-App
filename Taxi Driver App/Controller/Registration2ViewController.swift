@@ -8,17 +8,16 @@
 import UIKit
 import MobileCoreServices
 
-class Registration2ViewController: PhotoViewController {
+class Registration2ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var brandCarTitleDropDown: UILabel!
     @IBOutlet weak var brandCarViewDropDown: UIView!
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-    @IBOutlet weak var carPhotoTableView: UITableView!
-    
-    
+   
     let titleArray = ["Спереду", "Ззаду" ,"Збоку" ,"В салоні"]
     
     let brandCarDropDown = DropDownManager()
@@ -27,11 +26,9 @@ class Registration2ViewController: PhotoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        carPhotoTableView.dataSource = self
-        carPhotoTableView.delegate = self
+        scrollView.setContentOffset(CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height), animated: true)
         
-        carPhotoTableView.register(UINib(nibName: "photoCell", bundle: nil), forCellReuseIdentifier: "PhotoCell")
-        
+    
         backButton.layer.cornerRadius = 10
         backButton.layer.borderWidth = 1.0
         backButton.layer.borderColor = UIColor.black.cgColor
@@ -39,7 +36,7 @@ class Registration2ViewController: PhotoViewController {
         
         navigationItem.backButtonTitle = ""
     
-        carPhotoTableView.rowHeight = self.view.frame.size.height / 6
+       
         brandCarTitleDropDown.text = "Виберіть марку автомобіля"
         brandCarDropDown.addDropDown(textDropDown: brandCarTitleDropDown, viewDropDown: brandCarViewDropDown, listDropDown: brandCarList)
         // Do any additional setup after loading the view.
@@ -93,24 +90,4 @@ class Registration2ViewController: PhotoViewController {
     
     }
 }
-extension Registration2ViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArray.count
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! photoCell
-        cell.titleLabel.text = titleArray[indexPath.row]
-//        cell.photoImage.image = super.image
-        
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        actionSheet()
-        
-      
-    }
-    
-    
-}
+

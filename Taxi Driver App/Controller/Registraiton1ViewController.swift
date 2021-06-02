@@ -63,7 +63,6 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.fullNameTextField.delegate = self
         self.telophoneTextField.delegate = self
         self.emailTextField.delegate = self
@@ -77,16 +76,16 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
         
         // Do any additional setup after loading the view.
     }
-  
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.title = ""
         guard let service = serviceTitleDropDown.text else {
-          return
+            return
         }
         Singelton.shared.service = service
     }
     
-   
+    
     //MARK: - TableView Delegate Methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -143,7 +142,7 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func serviceDropDownButtonPressed(_ sender: UIButton) {
         serviceDropDownManager.dropDown.show()
-       
+        
         
     }
     @IBAction func choseImageButtonPressed(_ sender: UIButton) {

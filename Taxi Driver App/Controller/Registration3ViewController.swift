@@ -11,7 +11,7 @@ import MobileCoreServices
 class Registration3ViewController: PhotoViewController {
     
     @IBOutlet weak var driverLicenseImageView: UIImageView!
-    @IBOutlet weak var documentsFotoTableView: UITableView!
+   
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
@@ -24,13 +24,6 @@ class Registration3ViewController: PhotoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Документи"
-        
-        
-        
-        documentsFotoTableView.dataSource = self
-        documentsFotoTableView.delegate = self
-        
-        documentsFotoTableView.register(UINib(nibName: "photoCell", bundle: nil), forCellReuseIdentifier: "PhotoCell")
         
         backButton.layer.cornerRadius = 10
         backButton.layer.borderWidth = 1.0
@@ -100,16 +93,4 @@ class Registration3ViewController: PhotoViewController {
     
     
 }
-extension Registration3ViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return documentArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! photoCell
-        cell.titleLabel.text = documentArray[indexPath.row]
-        return cell
-    }
-    
-    
-}
+

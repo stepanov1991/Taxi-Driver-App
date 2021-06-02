@@ -12,6 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var connectionSetiingButton: UIButton!
     @IBOutlet weak var bachgroundView: UIView!
@@ -29,13 +30,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .selected)
         }
     }
-    @IBOutlet weak var serviceViewDropDown: UIView!
-    @IBOutlet weak var serviceTitleDropDown: UILabel!
+   
     
     
     
     var rememberCheckBox = false
-    let serviceDropDown = DropDownManager()
     let serviceList = ["549","6565","2299","700900"]
     
     
@@ -49,6 +48,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
         self.loginTextField.delegate = self
         
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        
+   
+        
         rememberCheckBox = UserDefaults.standard.bool(forKey: "REMEMBER_USER")
         checkBox.isSelected = rememberCheckBox
         if rememberCheckBox {
@@ -58,7 +62,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             loginTextField.text = login
         }
         
-        serviceTitleDropDown.text = "Виберіть службу"
+       
         
         loginButton.layer.cornerRadius = 10
         bachgroundView.layer.cornerRadius = 20
@@ -67,14 +71,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         connectionSetiingButton.layer.borderColor = UIColor.black.cgColor
         connectionSetiingButton.layer.cornerRadius = 10
         
-        serviceDropDown.addDropDown(textDropDown: serviceTitleDropDown, viewDropDown: serviceViewDropDown, listDropDown: serviceList)
+        
   
     }
     
 
-    @IBAction func serviceDropDownPressed(_ sender: UIButton) {
-        serviceDropDown.dropDown.show()
-    }
+
     @IBAction func showPasswordButtonPressed(_ sender: UIButton) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
@@ -143,6 +145,37 @@ extension UIButton {
             
         }
         
+    }
+    
+    
+}
+//MARK: - PickerView DataSorce and Delegate Methods
+@available(iOS 13.0, *)
+extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return serviceList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        print(serviceList[row])
+        return serviceList[row]
+    }
+    
+  
+    
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = .black
+        pickerLabel.font = UIFont.systemFont(ofSize: 22.0)
+        pickerLabel.textAlignment = .center
+        pickerLabel.text = serviceList[row]
+
+        return pickerLabel
     }
     
     
