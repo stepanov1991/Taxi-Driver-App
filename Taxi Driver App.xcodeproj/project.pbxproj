@@ -26,6 +26,8 @@
 		CEDFBDAF26660E04004FE22C /* ConnectionSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */; };
 		CEDFBDB426665AAE004FE22C /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDB326665AAE004FE22C /* Singelton.swift */; };
 		CEDFBDB62666611B004FE22C /* ResetPassvordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDB52666611B004FE22C /* ResetPassvordViewController.swift */; };
+		CEDFBDDB2667A861004FE22C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDFBDDA2667A861004FE22C /* MainStoryboard.storyboard */; };
+		CEDFBDDF2667A8B0004FE22C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDDE2667A8B0004FE22C /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettingsViewController.swift; sourceTree = "<group>"; };
 		CEDFBDB326665AAE004FE22C /* Singelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singelton.swift; sourceTree = "<group>"; };
 		CEDFBDB52666611B004FE22C /* ResetPassvordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassvordViewController.swift; sourceTree = "<group>"; };
+		CEDFBDDA2667A861004FE22C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		CEDFBDDE2667A8B0004FE22C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taxi_Driver_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,9 +108,8 @@
 		CE2749FF263D3F8F0029F91C /* Taxi Driver App */ = {
 			isa = PBXGroup;
 			children = (
-				CE274A18263D42610029F91C /* Controller */,
-				CE274A17263D42550029F91C /* View */,
-				CE274A16263D42430029F91C /*  Model  */,
+				CEDFBDD92667A4C6004FE22C /* Main */,
+				CEDFBDD72667A39B004FE22C /* Profile Registration */,
 				CE274A00263D3F8F0029F91C /* AppDelegate.swift */,
 				CE274A02263D3F8F0029F91C /* SceneDelegate.swift */,
 				CE274A09263D3F900029F91C /* Assets.xcassets */,
@@ -149,6 +152,41 @@
 				CE162746265F89690080FB94 /* Registration3ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		CEDFBDD72667A39B004FE22C /* Profile Registration */ = {
+			isa = PBXGroup;
+			children = (
+				CE274A18263D42610029F91C /* Controller */,
+				CE274A17263D42550029F91C /* View */,
+				CE274A16263D42430029F91C /*  Model  */,
+			);
+			path = "Profile Registration";
+			sourceTree = "<group>";
+		};
+		CEDFBDD92667A4C6004FE22C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CEDFBDDD2667A887004FE22C /* View */,
+				CEDFBDDC2667A873004FE22C /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CEDFBDDC2667A873004FE22C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEDFBDDE2667A8B0004FE22C /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CEDFBDDD2667A887004FE22C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEDFBDDA2667A861004FE22C /* MainStoryboard.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE162745265D22800080FB94 /* photoCell.xib in Resources */,
+				CEDFBDDB2667A861004FE22C /* MainStoryboard.storyboard in Resources */,
 				CE274A0D263D3F900029F91C /* LaunchScreen.storyboard in Resources */,
 				CE274A0A263D3F900029F91C /* Assets.xcassets in Resources */,
 				CE274A08263D3F8F0029F91C /* Main.storyboard in Resources */,
@@ -275,6 +314,7 @@
 				CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */,
 				CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */,
 				CEDFBDB62666611B004FE22C /* ResetPassvordViewController.swift in Sources */,
+				CEDFBDDF2667A8B0004FE22C /* MainViewController.swift in Sources */,
 				CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */,
 				CEDFBDAD26650016004FE22C /* PhotoManager.swift in Sources */,
 				CE274A03263D3F8F0029F91C /* SceneDelegate.swift in Sources */,

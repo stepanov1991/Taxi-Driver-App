@@ -112,6 +112,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "MainViewController") as MainViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+        
     }
     
     //MARK: - TextField Delegate
