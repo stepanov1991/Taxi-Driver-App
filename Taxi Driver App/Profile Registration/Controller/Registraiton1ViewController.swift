@@ -12,15 +12,6 @@ import AVFoundation
 @available(iOS 13.0, *)
 class Registraiton1ViewController: UIViewController {
     
-    
-    
-    
-
-    
-
-    
-    
-    
     @IBOutlet weak var cityesPickerView: UIPickerView!
     @IBOutlet weak var servicesPickerView: UIPickerView!
     @IBOutlet weak var servieDropDownTextField: UITextField!
@@ -41,7 +32,20 @@ class Registraiton1ViewController: UIViewController {
     
     static var service = ""
     
-    override func viewWillAppear(_ animated: Bool) {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fullNameTextField.delegate = self
+        telophoneTextField.delegate = self
+        emailTextField.delegate = self
+        servieDropDownTextField.delegate = self
+        cityDropDownTextField.delegate = self
+        
+        cityesPickerView.delegate = self
+        cityesPickerView.dataSource = self
+        servicesPickerView.delegate = self
+        servicesPickerView.dataSource = self
         
         let backBarButton = UIImage(named: "back")
         self.navigationController?.navigationBar.backIndicatorImage = backBarButton
@@ -58,26 +62,6 @@ class Registraiton1ViewController: UIViewController {
         
         nextButton.layer.cornerRadius = 10
         
-        
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        fullNameTextField.delegate = self
-        telophoneTextField.delegate = self
-        emailTextField.delegate = self
-        servieDropDownTextField.delegate = self
-        cityDropDownTextField.delegate = self
-        
-        cityesPickerView.delegate = self
-        cityesPickerView.dataSource = self
-        servicesPickerView.delegate = self
-        servicesPickerView.dataSource = self
-       
-       
-      
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,11 +71,6 @@ class Registraiton1ViewController: UIViewController {
         }
         Singelton.shared.service = service
     }
-    
-    
-    //MARK: - TableView Delegate Methods
-    
-
     
     //MARK: - Add pfoto functions
     
@@ -107,6 +86,7 @@ class Registraiton1ViewController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
     func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             let image = UIImagePickerController()
@@ -129,11 +109,10 @@ class Registraiton1ViewController: UIViewController {
         }
     }
     
-    //MARK: - Actions
     
     @IBAction func choseImageButtonPressed(_ sender: UIButton) {
         actionSheet()
-    
+        
     }
     
     
@@ -172,20 +151,13 @@ extension Registraiton1ViewController : UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        if pickerView == cityesPickerView {
-//            return self.cityList.count
-//        }
-//        else {
-//            print(serviceList.count)
-//            return self.serviceList.count
-//        }
         if pickerView == servicesPickerView {
-                return self.serviceList.count
-            }
-            else {
-                
-                return self.cityList.count
-            }
+            return self.serviceList.count
+        }
+        else {
+            
+            return self.cityList.count
+        }
         
     }
     
@@ -199,8 +171,9 @@ extension Registraiton1ViewController : UIPickerViewDelegate, UIPickerViewDataSo
             return self.serviceList[row]
         }
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       
+        
         if pickerView == cityesPickerView {
             self.cityDropDownTextField.text = self.cityList[row]
             self.cityesPickerView.isHidden = true
@@ -211,6 +184,21 @@ extension Registraiton1ViewController : UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = .black
+        pickerLabel.font = UIFont.systemFont(ofSize: 20.0)
+        pickerLabel.textAlignment = .center
+        if pickerView == cityesPickerView {
+            pickerLabel.text = cityList[row]
+        }
+        else {
+            pickerLabel.text = serviceList[row]
+        }
+        
+        return pickerLabel
+    }
     
 }
 //MARK: -  TextFieldDelegate Metods

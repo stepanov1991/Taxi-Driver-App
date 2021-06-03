@@ -11,7 +11,7 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,17 +21,7 @@ class LoginScreenViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         
         self.title = ""
-   
-        
-        // Do any additional setup after loading the view.
     }
-    
-  
-
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
-    }
-    @IBAction func registerButtonPressed(_ sender: UIButton) {
-    }
-    
+ 
 }
 

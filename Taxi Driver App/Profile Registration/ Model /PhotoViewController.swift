@@ -28,6 +28,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             
             
             self.image = editingImage
+           
             //self.profilFotoImage.image = editingImage
         }
        self.dismiss(animated: true, completion: nil)

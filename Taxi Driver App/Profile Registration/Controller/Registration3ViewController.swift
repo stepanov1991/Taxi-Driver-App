@@ -11,7 +11,7 @@ import MobileCoreServices
 class Registration3ViewController: PhotoViewController {
     
     @IBOutlet weak var driverLicenseImageView: UIImageView!
-   
+    
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
@@ -19,7 +19,7 @@ class Registration3ViewController: PhotoViewController {
     let documentArray = ["Сторона 1","Сторона 2"]
     var service = ""
     //   let photoManager = PhotoManager()
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,6 @@ class Registration3ViewController: PhotoViewController {
         
         sendButton.layer.cornerRadius = 10
         
-        
-        
-        
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -42,8 +39,8 @@ class Registration3ViewController: PhotoViewController {
     @IBAction func driverLicenseAddImageButtonPressed(_ sender: UIButton) {
         driverLicenseImageView.image = super.getImage()
         actionSheet()
-      
-     
+        
+        
     }
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         let alert = UIAlertController(title: "Реєстрація успішна", message: "Очікуйте на дзвінок від адмістрітора служби \(Singelton.shared.service)", preferredStyle: .alert)
@@ -90,7 +87,6 @@ class Registration3ViewController: PhotoViewController {
             
         }
     }
-    
     
 }
 

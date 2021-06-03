@@ -10,8 +10,7 @@ import Foundation
 class Singelton {
     static let shared = Singelton()
     
-    private init() {
-        
-    }
+    private init() {}
+    
     var service = ""
 }

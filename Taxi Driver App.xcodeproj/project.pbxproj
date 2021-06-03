@@ -19,7 +19,6 @@
 		CE274A1D263D4D4C0029F91C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A1C263D4D4C0029F91C /* LoginViewController.swift */; };
 		CECB430A264690E5004AE69D /* Registraiton1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */; };
 		CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB430B2646CE98004AE69D /* Registration2ViewController.swift */; };
-		CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */; };
 		CEDFBDAD26650016004FE22C /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAC26650016004FE22C /* PhotoManager.swift */; };
 		CEDFBDAF26660E04004FE22C /* ConnectionSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */; };
 		CEDFBDB426665AAE004FE22C /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDB326665AAE004FE22C /* Singelton.swift */; };
@@ -27,6 +26,7 @@
 		CEDFBDDB2667A861004FE22C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDFBDDA2667A861004FE22C /* MainStoryboard.storyboard */; };
 		CEDFBDDF2667A8B0004FE22C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDDE2667A8B0004FE22C /* MainViewController.swift */; };
 		CEDFBDE12667B5A9004FE22C /* MainAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDFBDE02667B5A9004FE22C /* MainAssets.xcassets */; };
+		CEDFBDE32668ECD5004FE22C /* ButtonAnimatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDE22668ECD5004FE22C /* ButtonAnimatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,6 @@
 		CE274A1C263D4D4C0029F91C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CECB4309264690E5004AE69D /* Registraiton1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registraiton1ViewController.swift; sourceTree = "<group>"; };
 		CECB430B2646CE98004AE69D /* Registration2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2ViewController.swift; sourceTree = "<group>"; };
-		CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownManager.swift; sourceTree = "<group>"; };
 		CEDFBDAC26650016004FE22C /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		CEDFBDAE26660E04004FE22C /* ConnectionSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettingsViewController.swift; sourceTree = "<group>"; };
 		CEDFBDB326665AAE004FE22C /* Singelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singelton.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		CEDFBDDA2667A861004FE22C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CEDFBDDE2667A8B0004FE22C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEDFBDE02667B5A9004FE22C /* MainAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAssets.xcassets; sourceTree = "<group>"; };
+		CEDFBDE22668ECD5004FE22C /* ButtonAnimatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimatorManager.swift; sourceTree = "<group>"; };
 		DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taxi_Driver_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,9 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				CE16274C26624E640080FB94 /* PhotoViewController.swift */,
-				CEDFBDAA2664D7FD004FE22C /* DropDownManager.swift */,
 				CEDFBDAC26650016004FE22C /* PhotoManager.swift */,
 				CEDFBDB326665AAE004FE22C /* Singelton.swift */,
+				CEDFBDE22668ECD5004FE22C /* ButtonAnimatorManager.swift */,
 			);
 			path = " Model ";
 			sourceTree = "<group>";
@@ -306,12 +306,12 @@
 				CE274A05263D3F8F0029F91C /* LoginScreenViewController.swift in Sources */,
 				CEDFBDB426665AAE004FE22C /* Singelton.swift in Sources */,
 				CE162747265F89690080FB94 /* Registration3ViewController.swift in Sources */,
+				CEDFBDE32668ECD5004FE22C /* ButtonAnimatorManager.swift in Sources */,
 				CECB430A264690E5004AE69D /* Registraiton1ViewController.swift in Sources */,
 				CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */,
 				CECB430C2646CE98004AE69D /* Registration2ViewController.swift in Sources */,
 				CEDFBDB62666611B004FE22C /* ResetPassvordViewController.swift in Sources */,
 				CEDFBDDF2667A8B0004FE22C /* MainViewController.swift in Sources */,
-				CEDFBDAB2664D7FD004FE22C /* DropDownManager.swift in Sources */,
 				CEDFBDAD26650016004FE22C /* PhotoManager.swift in Sources */,
 				CE274A03263D3F8F0029F91C /* SceneDelegate.swift in Sources */,
 				CE16274D26624E640080FB94 /* PhotoViewController.swift in Sources */,

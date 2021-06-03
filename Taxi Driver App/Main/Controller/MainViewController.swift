@@ -36,6 +36,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func playStopButtonPressed(_ sender: UIButton) {
+//        sender.changeButtonImageAnimation {
+//            
+//        }
      //   sender.setImage(UIImage(named: "stopIcon"), for: .normal)
     }
     

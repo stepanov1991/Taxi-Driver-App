@@ -11,41 +11,32 @@ import MobileCoreServices
 class Registration2ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var brandCarTitleDropDown: UILabel!
-    @IBOutlet weak var brandCarViewDropDown: UIView!
+    
+    @IBOutlet weak var brandDropDownTextField: UITextField!
+    @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-   
-    let titleArray = ["Спереду", "Ззаду" ,"Збоку" ,"В салоні"]
     
-    let brandCarDropDown = DropDownManager()
     let brandCarList = ["Lanos", "BMW", "Skoda", "Lada", "Volkswagen", "Mercedes-Benz"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        scrollView.setContentOffset(CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height), animated: true)
         
-    
+        pickerView.delegate = self
+        brandDropDownTextField.delegate = self
+        
         backButton.layer.cornerRadius = 10
         backButton.layer.borderWidth = 1.0
         backButton.layer.borderColor = UIColor.black.cgColor
         nextButton.layer.cornerRadius = 10
         
         navigationItem.backButtonTitle = ""
-    
-       
-        brandCarTitleDropDown.text = "Виберіть марку автомобіля"
-        brandCarDropDown.addDropDown(textDropDown: brandCarTitleDropDown, viewDropDown: brandCarViewDropDown, listDropDown: brandCarList)
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    @IBAction func brandButtonDropDownPressed(_ sender: UIButton) {
-        brandCarDropDown.dropDown.show()
-    }
+    
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -54,8 +45,8 @@ class Registration2ViewController: UIViewController, UIImagePickerControllerDele
         let alert = UIAlertController(title: "Chose photo", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Open camera", style: .default, handler: { (handler) in
             self.openCamera()
-          
-          
+            
+            
         }))
         alert.addAction(UIAlertAction(title: "Chose from gallery", style: .default, handler: { (handler) in
             self.openGallery()
@@ -75,7 +66,7 @@ class Registration2ViewController: UIViewController, UIImagePickerControllerDele
             image.sourceType = .camera
             image.mediaTypes = [kUTTypeImage as String]
             self.present(image, animated: true, completion: nil)
-           
+            
         }
     }
     
@@ -87,7 +78,40 @@ class Registration2ViewController: UIViewController, UIImagePickerControllerDele
             self.present(image, animated: true, completion: nil)
             
         }
+        
+    }
+}
+//MARK: - PickerVIew Delegate and DataSorce methods
+
+extension Registration2ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return brandCarList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.view.endEditing(true)
+        return brandCarList[row]
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        brandDropDownTextField.text = brandCarList[row]
+        pickerView.isHidden = true
+        
+    }
+    
+    
+}
+
+extension Registration2ViewController : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == brandDropDownTextField {
+            textField.endEditing(true)
+            pickerView.isHidden = false
+        }
     }
 }
 
