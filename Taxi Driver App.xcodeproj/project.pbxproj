@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		89088EE24220A44F51E3C344 /* Pods_Taxi_Driver_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */; };
-		CE162744265D22800080FB94 /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE162742265D22800080FB94 /* photoCell.swift */; };
-		CE162745265D22800080FB94 /* photoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE162743265D22800080FB94 /* photoCell.xib */; };
 		CE162747265F89690080FB94 /* Registration3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE162746265F89690080FB94 /* Registration3ViewController.swift */; };
 		CE16274D26624E640080FB94 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16274C26624E640080FB94 /* PhotoViewController.swift */; };
 		CE274A01263D3F8F0029F91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE274A00263D3F8F0029F91C /* AppDelegate.swift */; };
@@ -28,13 +26,12 @@
 		CEDFBDB62666611B004FE22C /* ResetPassvordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDB52666611B004FE22C /* ResetPassvordViewController.swift */; };
 		CEDFBDDB2667A861004FE22C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDFBDDA2667A861004FE22C /* MainStoryboard.storyboard */; };
 		CEDFBDDF2667A8B0004FE22C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFBDDE2667A8B0004FE22C /* MainViewController.swift */; };
+		CEDFBDE12667B5A9004FE22C /* MainAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDFBDE02667B5A9004FE22C /* MainAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C02D052518B0A3E445175D0 /* Pods-Taxi Driver App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taxi Driver App.release.xcconfig"; path = "Target Support Files/Pods-Taxi Driver App/Pods-Taxi Driver App.release.xcconfig"; sourceTree = "<group>"; };
 		79927F27ED183331385B1144 /* Pods-Taxi Driver App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taxi Driver App.debug.xcconfig"; path = "Target Support Files/Pods-Taxi Driver App/Pods-Taxi Driver App.debug.xcconfig"; sourceTree = "<group>"; };
-		CE162742265D22800080FB94 /* photoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
-		CE162743265D22800080FB94 /* photoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = photoCell.xib; sourceTree = "<group>"; };
 		CE162746265F89690080FB94 /* Registration3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration3ViewController.swift; sourceTree = "<group>"; };
 		CE16274C26624E640080FB94 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CE2749FD263D3F8F0029F91C /* Taxi Driver App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taxi Driver App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +52,7 @@
 		CEDFBDB52666611B004FE22C /* ResetPassvordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassvordViewController.swift; sourceTree = "<group>"; };
 		CEDFBDDA2667A861004FE22C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CEDFBDDE2667A8B0004FE22C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEDFBDE02667B5A9004FE22C /* MainAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAssets.xcassets; sourceTree = "<group>"; };
 		DAA1AE7B72DB09349F08065C /* Pods_Taxi_Driver_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taxi_Driver_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				CE274A06263D3F8F0029F91C /* Main.storyboard */,
-				CE162742265D22800080FB94 /* photoCell.swift */,
-				CE162743265D22800080FB94 /* photoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +165,7 @@
 			children = (
 				CEDFBDDD2667A887004FE22C /* View */,
 				CEDFBDDC2667A873004FE22C /* Controller */,
+				CEDFBDE02667B5A9004FE22C /* MainAssets.xcassets */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -248,7 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE162745265D22800080FB94 /* photoCell.xib in Resources */,
+				CEDFBDE12667B5A9004FE22C /* MainAssets.xcassets in Resources */,
 				CEDFBDDB2667A861004FE22C /* MainStoryboard.storyboard in Resources */,
 				CE274A0D263D3F900029F91C /* LaunchScreen.storyboard in Resources */,
 				CE274A0A263D3F900029F91C /* Assets.xcassets in Resources */,
@@ -306,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE274A1D263D4D4C0029F91C /* LoginViewController.swift in Sources */,
-				CE162744265D22800080FB94 /* photoCell.swift in Sources */,
 				CE274A05263D3F8F0029F91C /* LoginScreenViewController.swift in Sources */,
 				CEDFBDB426665AAE004FE22C /* Singelton.swift in Sources */,
 				CE162747265F89690080FB94 /* Registration3ViewController.swift in Sources */,

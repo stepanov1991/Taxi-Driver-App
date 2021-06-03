@@ -25,6 +25,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let data = convertFromUIImagetoDict(info)
         if let editingImage = data[convertInfoKey((UIImagePickerController.InfoKey.editedImage))] as? UIImage {
+            
+            
             self.image = editingImage
             //self.profilFotoImage.image = editingImage
         }

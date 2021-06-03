@@ -12,6 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    @IBOutlet weak var dropDownTextField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var connectionSetiingButton: UIButton!
@@ -47,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.passwordTextField.delegate = self
         self.loginTextField.delegate = self
-        
+        self.dropDownTextField.delegate = self
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         
@@ -132,6 +133,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let log = loginTextField.text
         UserDefaults.standard.set(log, forKey: "USER_LOGIN")
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == dropDownTextField {
+            self.pickerView.isHidden = false
+            textField.endEditing(true)
+        }
+    }
 }
 
 //MARK: - Button to ChackBox extension
@@ -166,17 +174,20 @@ extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print(serviceList[row])
+        self.view.endEditing(true)
         return serviceList[row]
     }
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.dropDownTextField.text = self.serviceList[row]
+        self.pickerView.isHidden = true
+    }
   
     
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
         pickerLabel.textColor = .black
-        pickerLabel.font = UIFont.systemFont(ofSize: 22.0)
+        pickerLabel.font = UIFont.systemFont(ofSize: 20.0)
         pickerLabel.textAlignment = .center
         pickerLabel.text = serviceList[row]
 

@@ -7,22 +7,27 @@
 
 import UIKit
 import MobileCoreServices
-import DropDown
 import AVFoundation
 
 @available(iOS 13.0, *)
-class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
+class Registraiton1ViewController: UIViewController {
     
     
     
     
-    @IBOutlet weak var cityTitleDropDown: UILabel!
-    @IBOutlet weak var cityViewDropDown: UIView!
+
     
-    @IBOutlet weak var serviceTitleDropDown: UILabel!
-    @IBOutlet weak var serviceViewDropDown: UIView!
+
+    
+    
+    
+    @IBOutlet weak var cityesPickerView: UIPickerView!
+    @IBOutlet weak var servicesPickerView: UIPickerView!
+    @IBOutlet weak var servieDropDownTextField: UITextField!
+    @IBOutlet weak var cityDropDownTextField: UITextField!
     
     @IBOutlet weak var profilFotoImage: UIImageView!
+    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var choseImageButton: UIButton!
     
@@ -33,9 +38,6 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     
     let cityList = ["Київ", "Хмельницький", "Одеса", "Львів", "Харків"]
     let serviceList = ["549","6565","2299","700900"]
-    
-    let cityDropDown = DropDownManager()
-    let serviceDropDownManager = DropDownManager()
     
     static var service = ""
     
@@ -63,23 +65,24 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fullNameTextField.delegate = self
-        self.telophoneTextField.delegate = self
-        self.emailTextField.delegate = self
+        fullNameTextField.delegate = self
+        telophoneTextField.delegate = self
+        emailTextField.delegate = self
+        servieDropDownTextField.delegate = self
+        cityDropDownTextField.delegate = self
         
-        
-        cityTitleDropDown.text = "Виберіть місто"
-        cityDropDown.addDropDown(textDropDown: cityTitleDropDown, viewDropDown: cityViewDropDown, listDropDown: cityList)
-        
-        serviceTitleDropDown.text = "Виберіть службу"
-        serviceDropDownManager.addDropDown(textDropDown: serviceTitleDropDown, viewDropDown: serviceViewDropDown, listDropDown: serviceList)
-        
-        // Do any additional setup after loading the view.
+        cityesPickerView.delegate = self
+        cityesPickerView.dataSource = self
+        servicesPickerView.delegate = self
+        servicesPickerView.dataSource = self
+       
+       
+      
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.title = ""
-        guard let service = serviceTitleDropDown.text else {
+        guard let service = servieDropDownTextField.text else {
             return
         }
         Singelton.shared.service = service
@@ -88,16 +91,7 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - TableView Delegate Methods
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        fullNameTextField.resignFirstResponder()
-        telophoneTextField.resignFirstResponder()
-        emailTextField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
+
     
     //MARK: - Add pfoto functions
     
@@ -137,18 +131,9 @@ class Registraiton1ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Actions
     
-    @IBAction func cityDropDownButtonPressed(_ sender: UIButton) {
-        cityDropDown.dropDown.show()
-    }
-    @IBAction func serviceDropDownButtonPressed(_ sender: UIButton) {
-        serviceDropDownManager.dropDown.show()
-        
-        
-    }
     @IBAction func choseImageButtonPressed(_ sender: UIButton) {
         actionSheet()
-        
-        
+    
     }
     
     
@@ -176,6 +161,79 @@ extension Registraiton1ViewController: UIImagePickerControllerDelegate, UINaviga
     
     func convertInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
         return input.rawValue
+    }
+}
+//MARK: - PickerView DataSorce and Delegate Methods
+
+@available(iOS 13.0, *)
+extension Registraiton1ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        if pickerView == cityesPickerView {
+//            return self.cityList.count
+//        }
+//        else {
+//            print(serviceList.count)
+//            return self.serviceList.count
+//        }
+        if pickerView == servicesPickerView {
+                return self.serviceList.count
+            }
+            else {
+                
+                return self.cityList.count
+            }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == cityesPickerView {
+            self.view.endEditing(true)
+            return self.cityList[row]
+        }
+        else {
+            self.view.endEditing(true)
+            return self.serviceList[row]
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+       
+        if pickerView == cityesPickerView {
+            self.cityDropDownTextField.text = self.cityList[row]
+            self.cityesPickerView.isHidden = true
+        }
+        else {
+            self.servieDropDownTextField.text = self.serviceList[row]
+            self.servicesPickerView.isHidden = true
+        }
+    }
+    
+    
+}
+//MARK: -  TextFieldDelegate Metods
+
+@available(iOS 13.0, *)
+extension Registraiton1ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fullNameTextField.resignFirstResponder()
+        telophoneTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == cityDropDownTextField {
+            self.cityesPickerView.isHidden = false
+            textField.endEditing(true)
+        }
+        if textField == servieDropDownTextField {
+            self.servicesPickerView.isHidden = false
+            textField.endEditing(true)
+        }
     }
 }
 
